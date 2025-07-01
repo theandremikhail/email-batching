@@ -23,9 +23,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
-    - name: Create service account file
+    - name: Write service account JSON
       run: |
-        printf '%s' "${{ secrets.GCP_CREDENTIALS }}" > client_secret.json
+        echo "${{ secrets.GCP_CREDENTIALS }}" > client_secret.json
+
 
 
     - name: Run send_campaign.py
