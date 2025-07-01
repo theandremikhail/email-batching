@@ -25,7 +25,7 @@ jobs:
 
     - name: Create service account file
       run: |
-        echo "${{ secrets.GCP_CREDENTIALS }}" > service_account.json
+        echo "${{ secrets.GCP_CREDENTIALS }}" > client_secret.json
 
     - name: Run send_campaign.py
       run: python send_campaign.py
